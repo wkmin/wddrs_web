@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>datasky系统登陆</title>
+
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'login.css') }}" rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="static/js/login.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/jquery.json.js"></script>
+</head>
+
+<body>
+<div class="container" style="background:{{ url_for('static', filename = 'imgs/login_bg.jpg') }}">
+        <div id = SubminForm style="margin:0 auto;">
+                <h2 class="form-signin-heading" style="text-align:center">LabOpSys登陆</h2>
+                <!--用户名 -->
+                <input    type="text" id="UserName" 
+                class="form-control" placeholder="用户名">
+                <!--密码 -->        
+                <input  type="password" id="UserPw" 
+                class="form-control" placeholder="密码">
+
+                <div style="margin-top:0px">
+                        <div class="input-group">
+                                <div class="input-group-btn ">
+                                        <button type="button" 
+                                                class="btn btn-default dropdown-toggle form-control" 
+                                                data-toggle="dropdown" 
+                                                aria-haspopup="true" 
+                                                aria-expanded="false">
+                                                角色 <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" id="ul_Role">
+                                        </ul>
+                                </div><!-- /btn-group -->
+                                <div>
+                                        <input  type="text" readonly="readonly" 
+                                        class="form-control"  id="Role">
+                                </div>
+                        </div>
+                        <div class="alert alert-danger alert-dismissible" role="alert" style="text-align:center">登陆失败</div>
+                        <div class="checkbox">
+                                <label>
+                                        <input type="checkbox" value="remember-me"> 记住我
+                                </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block"  onclick="Login()">登陆</button>
+
+                </div>
+        </div> <!-- /container -->
+</body>
+</html>
