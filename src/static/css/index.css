@@ -1,0 +1,74 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+html,body {
+	/*padding-top: 50px;*/
+	width:100%;
+	background: #ECF0F5;
+	height:100%;
+	margin:0px;
+	min-width:1200px;
+	font-family:Microsoft YaHei,Arial,SimSun;
+}
+
+
+.ul_class> div>div> a:hover {
+	color:#FFF;
+}
+
+.ul_class {
+	list-style-type: none;
+	color: #9db1c5;
+	padding-left:0px;
+	border-bottom: 1px solid transparent;
+	border-color: rgba(255, 255, 255, 0.05);
+	position:absolute;
+}
+.ul_class> div{
+	font-size: 17px;
+	border-top: 1px solid transparent;
+	border-color: rgba(255, 255, 255, 0.05);
+	margin-left:0px;
+}
+.ul_class>div>div>a {
+	color: #adbece;
+	width:100%;
+}
+.ul_class>div>div>a>div>i{
+	margin-left:10px;
+	z-index:1;
+	/*display: inline-block;*/
+}
+
+.ul_class>div>div>a>span{
+	float:left;
+	margin-left:5px;
+	font-size:18px;
+}
+/*
+.ul_class> li>div{
+	position:absolute;
+	margin-left:60px;
+	margin-top:45px;
+}*/
+.ul_class> div>div>a>div{
+	float:left;
+	width:30px;
+	height:100%;
+	border-right: 1px solid transparent;
+	border-color: rgba(255, 255, 255, 0.05);
+}
+
+
+.div_background{
+	width:1px;
+	z-index:1;
+	position:absolute;
+}
+
+.console-header{
+	background-image: linear-gradient(90deg,#1278f6,#00b4aa);
+
+}

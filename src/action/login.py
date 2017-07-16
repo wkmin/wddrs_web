@@ -5,3 +5,7 @@ login = Blueprint('login', __name__)
 @login.route('/')
 def LoginPageInit():
     return render_template('login.html')
+
+@login.route('/index')
+def index():
+    return render_template('index.html')
