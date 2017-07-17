@@ -10,11 +10,11 @@ html,body {
 	height:100%;
 	margin:0px;
 	min-width:1200px;
-	font-family:Microsoft YaHei,Arial,SimSun;
+
 }
 
 
-.ul_class> div>div> a:hover {
+.ul_class> li > a:hover {
 	color:#FFF;
 }
 
@@ -26,49 +26,43 @@ html,body {
 	border-color: rgba(255, 255, 255, 0.05);
 	position:absolute;
 }
-.ul_class> div{
+
+.ul_class> li {
+	/*margin:0 auto;*/
+	height:44px;
+	font-weight: bold;
 	font-size: 17px;
 	border-top: 1px solid transparent;
 	border-color: rgba(255, 255, 255, 0.05);
-	margin-left:0px;
-}
-.ul_class>div>div>a {
-	color: #adbece;
-	width:100%;
-}
-.ul_class>div>div>a>div>i{
-	margin-left:10px;
-	z-index:1;
-	/*display: inline-block;*/
 }
 
-.ul_class>div>div>a>span{
-	float:left;
-	margin-left:5px;
-	font-size:18px;
+
+.ul_class> li>a {
+	color: #adbece;
+	width:100%;
+	line-height: 43px;
 }
-/*
-.ul_class> li>div{
-	position:absolute;
-	margin-left:60px;
-	margin-top:45px;
-}*/
-.ul_class> div>div>a>div{
+.ul_class> li>a>div>i{
+	margin-left:10px;
+	z-index:1;
+	*display: inline-block;*/
+}
+
+.ul_class> li>a>span{
 	float:left;
-	width:30px;
+	margin-left:20px;
+}
+.ul_class> li>a>div{
+	width:40px;
+	float:left;
 	height:100%;
 	border-right: 1px solid transparent;
 	border-color: rgba(255, 255, 255, 0.05);
 }
 
-
 .div_background{
+	height:43px;
 	width:1px;
 	z-index:1;
 	position:absolute;
-}
-
-.console-header{
-	background-image: linear-gradient(90deg,#1278f6,#00b4aa);
-
 }

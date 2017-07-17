@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
-		<meta charset="utf-8">   
-		<title>数据天空</title>
+		<meta charset="utf-8">
+		<title>数据天空大数据系统</title>
 
 	</head>
 	<body>
-		<div class="console-header" style="height:50px;width:100%;position:fixed;z-index:10">
-			<div style="float:left;height:100%;width:420px; font-size:20px;">
-				<img src="/img/logo.png" style="padding-left:10px">
+		<div style="height:50px;width:100%;background: #25313e;color: #adbece; position:fixed;z-index:10">
+			<div style="float:left;background:#2e3e4e;height:100%;width:220px; font-size:20px;font-weight: bold;">
+				<img src="static/imgs/logo.png" style="padding-left:10px;line-height:50px">
 				</img>
-				<span style="padding-top:10px;display: inline-block;font-size:25px;font-family:Microsoft YaHei,Arial,SimSun;">
-				DataSky大数据分析平台
+				<span style="padding-top:10px;display: inline-block;">
+				管理控制台
 				</span>
 			</div>
-			<div style="float:right;width:240px;height:100%;">
+			<div style="float:right;width:240px;height:100%;background:#2e3e4e">
 				<span class="glyphicon glyphicon-user" style="display:inline-block;padding-left:5px;text-align:center;margin-top:15px;padding-left:30px">
 				</span>
-				<a style="padding-left:5px;text-align:center;margin-top:15px;padding-left:30px;cursor: pointer;" href="/logout">
+                {{username}}
+				<a style="text-align:center;display:inline-block;padding-left:20px;cursor: pointer;" href="/logout">
 					退出登陆
 				</a>
 
@@ -26,63 +27,37 @@
 		</div>
 		<div style="width:100%;height:100%;">
 			<div style="float:left;width:220px;height:100000px;background-color:#41586E;position:fixed;margin-top:50px;z-index:1 " id="sidebar">
-				<div style="width:220px;" class="ul_class">
-						<div id="stats_area">
-							<div style="height:30px">
-								<a href="#">
+				<div style="width:220px;">
+					<ul  style="width:100%" class="ul_class">
+						<li >
+							<a href="javascript:$('#context').load('');"  class='pre_class' >
 								<div>
 									<div style="background:#0BE20B;" class="div_background"  ></div>
-									<i class="glyphicon glyphicon-list" ></i>
+									<i class="glyphicon glyphicon-inbox" ></i>
 								</div>
-								<span >统计概况 </span>
-						       		</a>
-							</div>
-							<div style="margin-left:60px">
-								<div><a href="javascript:$('#context').load('/html/total_stats.html');" id="a_total_stats">整体概况</a></div>
-								<div><a href="javascript:$('#context').load('/html/slog_group.html');" id="a_sloggroup">实时统计</a></div>
-								<!--<div><a href="#">趋势预测</a></div>-->
-							</div>
-						</div>
-
-						<div id="analy_area">
-							<div style="height:30px">
-							<a href="#">
+								<span >客流管理</span>
+							</a>
+						</li>
+						<li >
+							<a href="javascript:$('#context').load('');" class='pre_class' >
 								<div>
 									<div style="background:#F1F719;" class="div_background" ></div>
-									<i class="glyphicon glyphicon-stats" ></i>
+									<i class="glyphicon glyphicon-tasks" ></i>
 								</div>
-								<span >数据分析</span>
+								<span >用户嗅探器设备</span>
 							</a>
-							</div>
-							<div style="margin-left:60px">
-								<div><a href="javascript:$('#context').load('/html/phone_manufactor.html');">手机品牌</a></div>
-								<div><a href="javascript:$('#context').load('/html/export_data.html');">导出数据</a></div>
-								<!--
-								<div><a href="#">新老顾客</a></div>
-								<div><a href="#">进入时段</a></div>
-								<div><a href="#">驻留时长</a></div>
-								<div><a href="#">手机状态</a></div>
-								<div><a href="#">顾客画像</a></div>
-								-->
-							</div>
-
-						</div>
-						<div id="device_area">
-							<div style="height:30px">
-							<a href="#">
+						</li>
+						<li >
+							<a href="javascript:$('#context').load('');" class='pre_class' >
 								<div>
 									<div style="background:#E29595;" class="div_background" ></div>
-									<i class="glyphicon glyphicon-cog" ></i>
+									<i class="glyphicon glyphicon-th" ></i>
 								</div>
-								<span >设备管理</span>
+								<span >设备组管理</span>
 							</a>
-							</div>
-							<div style="margin-left:60px">
-								<div><a href="javascript:$('#context').load('/html/wdt_group.html');" id="a_wd_group">站点管理</a></div>
-								<div><a href="javascript:$('#context').load('/html/user_wdt.html');" id="a_wd">设备配置</a></div>
-								<!--<div><a href="#">设备升级</a></div>-->
-							</div>
-						</div>
+						</li>
+
+					</ul>
 				</div>
 			</div>
 			<div style="float:left;padding-left:240px;height:100%" id="div_context">
@@ -93,14 +68,18 @@
 
 		</div>
 
-        <link href="{{url_for('static',filename='/css/index.css')}}" rel="stylesheet">
+		<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
         <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="/bootstrap-table/1.11.0/bootstrap-table.min.css">
-        <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<link href="static/css/index.css" rel="stylesheet">
 
-		<script src="/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
-		<script src="/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
-		<script src="/echarts/3.3.1/echarts.min.js"></script>
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.css">
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/bootstrap-table.min.js"></script>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.0/locale/bootstrap-table-zh-CN.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.3.1/echarts.min.js"></script>
 		<script type="text/javascript">
 
 		$(document).ready(function(){
@@ -108,31 +87,15 @@
 			wd_group_active=false
 			wd_active=false
 
-			$("#div_context").width($("body").width()-260)
-			$('#context').load('/html/total_stats.html')
+			//#$("#div_context").width($("body").width()-260)
+			//#$('#context').load('/html/slog_group.html')
 
-			$("#a_wd").hover(function(){
-				$("#a_wd > div>div").animate({width:'40px'},100);
+			$("a.pre_class").hover(function(){
+                    $(this).children("div").children("div").animate({width:'40px'},100);
 			},function(){
-				if (wd_active == false)
-					$("#a_wd >div>div").animate({width:'1px'},100);
+					$(this).children("div").children("div").animate({width:'1px'},100);
 			});
 
-			$("#a_wd_group").hover(function(){
-				$("#a_wd_group > div>div").animate({width:'40px'},100);
-			},function(){
-
-				if (wd_group_active == false)
-					$("#a_wd_group >div>div").animate({width:'1px'},100);
-			});
-
-			$("#a_sloggroup").hover(function(){
-				$("#a_sloggroup > div>div").animate({width:'40px'},100);
-			},function(){
-				if (slog_active == false)
-					$("#a_sloggroup >div>div").animate({width:'1px'},100);
-			});
-			
 		});
 		window.onresize=function(){
 			console.info($(window).height())
