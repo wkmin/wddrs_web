@@ -10,3 +10,6 @@ def LoginPageInit():
 @login.route('/index')
 def index():
     return render_template('index.html',username='bush2582')
+@login.route('/total_data')
+def total_data():
+    return render_template('total_data.html')

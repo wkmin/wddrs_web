@@ -8,13 +8,13 @@ from action.login import login
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'PS#yio`%_!((f_or(%)))s'
-SESSION_TYPE = 'redis'
-SESSION_REDIS= redis.Redis(host='192.168.0.2',port=6379,db=1)
-PERMANENT_SESSION_LIFETIME = timedelta(seconds=10)
+# SESSION_TYPE = 'redis'
+# SESSION_REDIS= redis.Redis(host='192.168.0.2',port=6379,db=1)
+# PERMANENT_SESSION_LIFETIME = timedelta(seconds=10)
 
 app.register_blueprint(login)
 app.config.from_object(__name__)
-Session(app)
+# Session(app)
 
 
 
