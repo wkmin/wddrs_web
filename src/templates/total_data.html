@@ -5,10 +5,15 @@
 			background-color:#E49B1A;
 		}
 		</style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/3.3.1/echarts.min.js"></script>
+
+        <script type="text/javascript" src="static/js/total_data.js" charset="utf-8"></script>
+
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/total_data.css')}}"/>
 	</head>
 	<body>
 
-		<div style="width:100%;border-radius: 5px;background:#FFF; max-height:2000px;height:300px">
+        <div style="width:100%;border-radius: 5px;background:#FFF; max-height:2000px;height:300px">
             <div style="width:100%;height:60px;font-size:20px;border-width:0 0 1px 0;border-style:solid;border-color:#b6aeae ">
                     <span style="width:10px;height:100%;float:left;background:#2c77c2">
                     </span>
@@ -226,14 +231,37 @@
             </div>
         </div>
 
-		<div style="width:100%;border-radius: 5px;background:#FFF; max-height:2000px;height:700px;margin-top:10px">
+		<div style="width:100%;border-radius: 5px;background:#FFF; max-height:2000px;height:550px;margin-top:10px">
                 <div style="width:100%;height:60px;font-size:20px;border-width:0 0 1px 0;border-style:solid;border-color:#b6aeae ">
                     <span style="width:10px;height:100%;float:left;background:#2c77c2">
                     </span>
                     <span style="margin-left:10px;float:left;line-height:60px">
                     实时走势
                     </span>
+                    <span class="span_class_active" onclick="change_span_status(this)" id="span_chose"> 
+                    客流量
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    新顾客
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    老顾客
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    常光顾顾客
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    一般性顾客
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    不常来顾客
+                    </span>
+                    <span class="span_class" onclick="change_span_status(this)" id="span_chose"> 
+                    平均驻店时长
+                    </span>
+
                  </div>
+                 <div id="pic" style="width: 100%;height:500px;margin-top:10px"></div>
         </div>
 	</body>
 </html>
