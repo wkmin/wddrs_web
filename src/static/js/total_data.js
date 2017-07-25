@@ -102,6 +102,7 @@ $(function(){
         }
         ]};
         myChart.setOption(option);
+        $('.selectpicker').selectpicker();
 });
 function change_span_status(which){
         $("[id=span_chose]").removeClass("span_class_active");
