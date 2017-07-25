@@ -30,7 +30,8 @@
 				<div style="width:220px;">
 					<ul  style="width:100%" class="ul_class">
 						<li >
-							<a href="javascript:void(0);" onclick='$("#context").load("/total_data");'  class='pre_class' >
+							<!--<a href="javascript:void(0);" onclick='$("#context").load("/total_data");'  class='pre_class' >-->
+							<a href="javascript:void(0);" onclick="change_a_status(this,'/total_data')"  class='pre_class' >
 								<div>
 									<div style="background:#0BE20B;" class="div_background"  ></div>
 									<i class="glyphicon glyphicon-inbox" ></i>
@@ -39,7 +40,7 @@
 							</a>
 						</li>
 						<li >
-							<a href="javascript:$('#context').load('');" class='pre_class' >
+							<a href="javascript:void(0);" onclick="change_a_status(this,'/total_data')"  class='pre_class' >
 								<div>
 									<div style="background:#F1F719;" class="div_background" ></div>
 									<i class="glyphicon glyphicon-tasks" ></i>
@@ -48,7 +49,7 @@
 							</a>
 						</li>
 						<li >
-							<a href="javascript:$('#context').load('');" class='pre_class' >
+							<a href="javascript:void(0);" onclick="change_a_status(this,'/total_data')"  class='pre_class' >
 								<div>
 									<div style="background:#E29595;" class="div_background" ></div>
 									<i class="glyphicon glyphicon-th" ></i>
@@ -91,9 +92,11 @@
             $('#context').load('/total_data')
 
 			$("a.pre_class").hover(function(){
-                    $(this).children("div").children("div").animate({width:'40px'},100);
+                    if ($(this).hasClass("li_a_active")  == false)
+                        $(this).children("div").children("div").animate({width:'40px'},100);
 			},function(){
-					$(this).children("div").children("div").animate({width:'1px'},100);
+                    if ($(this).hasClass("li_a_active")  == false)
+                        $(this).children("div").children("div").animate({width:'1px'},100);
 			});
 
 		});
@@ -102,6 +105,15 @@
 			$("#div_context").width($("body").width()-260)
 
 		};
+        function change_a_status(which,url){
+                $("a.pre_class").children("div").children("div").animate({width:'1px'},0);
+                $("a.pre_class").removeClass("li_a_active");
+                $("a.pre_class").css("color","#adbece")
+                $("#context").load(url);
+                $(which).addClass("li_a_active");
+                $(which).children("div").children("div").animate({width:'40px'},0);
+                $(which).css("color","#FFF")
+        }
 		</script>
 
 	</body>

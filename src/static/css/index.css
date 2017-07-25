@@ -17,6 +17,8 @@ html,body {
 .ul_class> li > a:hover {
 	color:#FFF;
 }
+.li_a_active{
+}
 
 .ul_class {
 	list-style-type: none;
