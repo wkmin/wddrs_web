@@ -13,3 +13,6 @@ def index():
 @login.route('/total_data')
 def total_data():
     return render_template('total_data.html')
+@login.route('/groups')
+def group():
+    return render_template('groups.html')
